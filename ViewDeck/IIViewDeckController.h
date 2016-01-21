@@ -103,6 +103,7 @@ typedef NS_ENUM(NSInteger, IIViewDeckPanningMode) {
     IIViewDeckDelegatePanning,         /// allows panning with a delegate
     IIViewDeckNavigationBarOrOpenCenterPanning,      /// panning occurs when you start touching the navigation bar if the center controller is visible.  If the left or right controller is open, pannning occurs anywhere on the center controller, not just the navbar.
     IIViewDeckAllViewsPanning,        /// you can pan anywhere in the viewdeck (including sideviews)
+    IIViewDeckScreenEdgeViewsPanning    /// Screen Edge mode 
 };
 
 

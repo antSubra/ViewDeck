@@ -2710,6 +2710,17 @@ static NSTimeInterval durationToAnimate(CGFloat pointsToAnimate, CGFloat velocit
     [self.panners addObject:panner];
 }
 
+- (void)addScreenEdgePanner:(UIView*)view {
+  if (!view) return;
+  
+  UIScreenEdgePanGestureRecognizer* panner = II_AUTORELEASE([[UIScreenEdgePanGestureRecognizer alloc] initWithTarget:self action:@selector(panned:)]);
+  panner.cancelsTouchesInView = _panningCancelsTouchesInView;
+  panner.edges = UIRectEdgeLeft;
+  panner.delegate = self;
+  [view addGestureRecognizer:panner];
+  [self.panners addObject:panner];
+}
+
 - (void)setNeedsAddPanners {
     if (_needsAddPannersIfAllPannersAreInactive)
         return;
@@ -2736,7 +2747,11 @@ static NSTimeInterval durationToAnimate(CGFloat pointsToAnimate, CGFloat velocit
         case IIViewDeckAllViewsPanning:
             [self addPanner:self.view];
             break;
-            
+        
+      case IIViewDeckScreenEdgeViewsPanning:
+        [self addScreenEdgePanner:self.view];
+        break;
+        
         case IIViewDeckFullViewPanning:
         case IIViewDeckDelegatePanning:
         case IIViewDeckNavigationBarOrOpenCenterPanning:
