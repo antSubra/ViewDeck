@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
                  LICENSE
                }
   s.author    = { 'Tom Adriaenssen' =>  'http://inferis.org/', 'Michael Ochs' => 'http://ios-coding.com/' }
-  s.source    = { :git => 'https://github.com/ViewDeck/ViewDeck.git', :tag => s.version.to_s }
+  s.source    = { :git => 'https://github.com/antSubra/ViewDeck.git', :tag => s.version.to_s }
   s.source_files  = 'ViewDeck/*.{h,m}'
   s.frameworks    = 'QuartzCore'
   s.requires_arc  = true
