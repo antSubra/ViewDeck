@@ -287,7 +287,7 @@ static const char* wrapControllerKey = "WrapController";
     method_exchangeImplementations(class_getInstanceMethod(self, ni), class_getInstanceMethod(self, wcni));
 }
 
-+ (void)load {
++ (void)shared {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         @autoreleasepool {

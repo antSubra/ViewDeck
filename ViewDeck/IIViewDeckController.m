@@ -3637,7 +3637,7 @@ static const char* viewDeckControllerKey = "ViewDeckController";
     }
 }
 
-+ (void)load {
++ (void)shared {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         @autoreleasepool {
@@ -3696,7 +3696,7 @@ static const char* viewDeckControllerKey = "ViewDeckController";
     }
 }
 
-+ (void)load {
++ (void)shared {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         @autoreleasepool {
